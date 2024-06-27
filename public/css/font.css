@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'MontSerrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('MontSerrat'), url('../font/montserrat.woff2') format('woff2');
+    font-display: swap;
+}
