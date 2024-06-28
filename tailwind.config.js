@@ -25,8 +25,10 @@ export default {
       gray: {
         '100': '#70727F',
         '200': '#36383F',
+        '300': '#2A2B3E',
       },
       white: '#FFFFFF',
+      red: '#FD6187',
     },
     fontFamily: {
       'montserrat': ['Montserrat', 'sans-serif'],

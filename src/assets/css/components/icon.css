@@ -1,0 +1,30 @@
+.icon {
+    @apply bg-current inline-block;
+}
+
+.icon-start {
+    mask: url('/svg/icons/icon-play.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.icon-pause {
+    mask: url('/svg/icons/icon-pause.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.icon-delete {
+    mask: url('/svg/icons/icon-trash.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1.5em;
+    height: 1.5em;
+}
