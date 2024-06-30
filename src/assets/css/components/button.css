@@ -1,0 +1,53 @@
+.btn {
+    --_color: var(--color, theme('colors.red.100'));
+    --_background-color: var(--background-color, theme('colors.gray.300'));
+
+    border-radius: 0 18px 18px 18px;
+    padding: 8px 16px;
+    cursor: pointer;
+
+    @apply font-montserrat font-semibold text-base;
+
+    color: var(--_color);
+    background-color: var(--_background-color);
+}
+
+.btn--with-borders {
+    @apply border;
+    --_border-color: var(--border-color, var(--_background-color));
+    border-color: var(--_border-color);
+}
+
+.btn--red {
+    --color: theme('colors.red.100');
+    --background-color: theme('colors.red.100');;
+}
+
+.btn--red-outline {
+    --color: theme('colors.red.100');
+    --border-color: theme('colors.red.100')
+}
+
+.btn--white-outline {
+    --color: theme('colors.red.100');
+    --background-color: theme('colors.white');
+}
+
+@screen no-hover {
+    .btn {
+        transition: background-color .4s ease, color .4s ease, border-color .4s ease, background-size .4s ease, border-radius .4s ease;
+    }
+
+    .btn:hover {
+        color: var(--background-color, var(--_background-color));
+        background-color: var(--color, var(--_color));
+        border-radius: 4px;
+    }
+
+    .btn--red-outline:hover,
+    .btn--white-outline:hover {
+        --border-color: theme('colors.gray.300');
+        --background-color: theme('colors.red.100');
+        --color: theme('colors.gray.300');
+    }
+}

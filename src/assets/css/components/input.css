@@ -1,0 +1,35 @@
+.default-input {
+    --_border-color: var(--border-color, theme('colors.red.100'));
+    --_background-color: var(--background-color, theme('colors.gray.300'));
+    --_color: var(--color, theme('colors.red.100'));
+    --tw-ring-color: var(--color, theme('colors.red.100'));
+
+    @apply text-3xl px-4 py-4 ring-0 border-0 outline-none text-center;
+
+    color: var(--_color);
+    background-color: var(--_background-color);
+    border-color: var(--_border-color);
+
+    &::placeholder {
+        color: var(--_color);
+        opacity: .5;
+        --tw-ring-color: var(--_border-color);
+    }
+
+    &:active {
+        --tw-ring-color: var(--_border-color);
+    }
+
+    &:focus {
+        --tw-ring-color: var(--_border-color);
+    }
+
+    &:hover {
+        --tw-ring-color: var(--_border-color);
+        @apply ring-1;
+    }
+}
+
+input.default-input {
+    @apply rounded;
+}

@@ -1,0 +1,8 @@
+.card-timer {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(253, 97, 135, 0.46);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(253, 97, 135, 0.46);
+}

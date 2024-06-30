@@ -1,0 +1,9 @@
+@import "tailwindcss/base.css";
+@import "base/default.css";
+@import "tailwindcss/components.css";
+@import "components/input.css";
+@import "components/icon.css";
+@import "components/cardTimer.css";
+@import "components/button.css";
+@import "utils.css";
+@import "tailwindcss/utilities.css";
