@@ -1,0 +1,47 @@
+.bg-form {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.anim {
+    animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-3px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(3px);
+    }
+}
+
+.toastify-custom {
+    @apply font-montserrat text-sm;
+}
+
+.toastify-custom.toast-success {
+    background-color: rgba(255, 255, 255, 0.04);;
+    color: #FD6187;
+}
+
+.toastify-custom.toast-error {
+    background-color: rgba(255, 255, 255, 0.04);;
+    color: #FD6187;
+}
+
+.toastify-custom.toast-warning {
+    background-color: rgba(255, 255, 255, 0.04);;
+    color: #FD6187;
+}
+
+.toastify-custom.toast-info {
+    background-color: rgba(255, 255, 255, 0.04);;
+    color: #FD6187;
+}
+
+.toastify-custom .Toastify__progress-bar {
+    background-color: #FD6187;
+}

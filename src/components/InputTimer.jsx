@@ -1,7 +1,14 @@
-const InputTimer = ({time}) => {
+const InputTimer = ({name, onChange, value}) => {
+    console.log(value);
     return (
         <div className={'flex flex-col justify-center items-center'}>
-            <input className={'default-input max-w-[5rem]'} type="text" value={time}/>
+            <input
+                className={'default-input max-w-[5rem]'}
+                type="text"
+                name={name}
+                onChange={onChange}
+                value={value}
+                />
         </div>
     )
 }

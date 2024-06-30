@@ -13,8 +13,13 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.20",
+    "howler": "^2.2.4",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.3.1",
+    "react-howler": "^5.2.0",
+    "react-toastify": "^10.0.5",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",

@@ -7,8 +7,12 @@
 #root {
     height: 100%;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
-    @apply font-montserrat font-normal text-base bg-gray-100 text-white;
+    @apply font-montserrat font-normal text-base bg-blue-300 text-white;
 }
