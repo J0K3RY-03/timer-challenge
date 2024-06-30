@@ -1,7 +1,7 @@
 import CircularProgress from "@mui/material/CircularProgress";
 import { useTimersStore } from "../stores/store.js";
 import ReactHowler from 'react-howler';
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import alertSound from '/src/alert.mp3';
 
 const TimerCard = ({ id }) => {
@@ -28,7 +28,6 @@ const TimerCard = ({ id }) => {
     const [isEditingTitle, setIsEditingTitle] = useState(false);
     const [localTitle, setLocalTitle] = useState(title);
     const [playSound, setPlaySound] = useState(false);
-    const playSoundRef = useRef(null);
 
     useEffect(() => {
         if (!playSound && totalSeconds === 1) {
@@ -75,26 +74,6 @@ const TimerCard = ({ id }) => {
         color = 'red';
     }
 
-    const handleToggleTimer = () => {
-        if (isRunning) {
-            stopTimer(id);
-        } else {
-            startTimer(id);
-        }
-    };
-
-    useEffect(() => {
-        if (playSound) {
-            if (playSoundRef.current) {
-                playSoundRef.current.play().then(() => {
-                    setPlaySound(false);
-                }).catch(error => {
-                    console.error('Erreur lors de la lecture du son :', error);
-                });
-            }
-        }
-    }, [playSound]);
-
     return (
         <div className={`${percentage <= 25 && percentage > 0 ? 'anim' : ''} min-w-[235px] card-timer rounded-xl flex flex-col justify-center items-center gap-6 py-4 px-8 max-w-[200px] xs:max-w-[400px]`}>
             <div className={'w-full h-full text-center'}>
@@ -119,7 +98,7 @@ const TimerCard = ({ id }) => {
                 <CircularProgress style={{width: '120px', height: '120px', color: color}} variant="determinate" value={percentage} />
             </div>
             <div className={'w-full flex justify-between items-center gap-6'}>
-                <div className={'hover:cursor-pointer hover:text-white'} onClick={handleToggleTimer}>
+                <div className={'hover:cursor-pointer hover:text-white'} onClick={isRunning ? () => stopTimer(id) : () => startTimer(id)}>
                     {isRunning ?
                         <i className={'icon icon-pause text-orange'}></i>
                         :
