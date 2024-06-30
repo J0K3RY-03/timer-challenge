@@ -23,25 +23,29 @@
 }
 
 .toastify-custom.toast-success {
-    background-color: rgba(255, 255, 255, 0.04);;
+    background-color: rgb(11, 35, 57);
     color: #FD6187;
 }
 
 .toastify-custom.toast-error {
-    background-color: rgba(255, 255, 255, 0.04);;
+    background-color: rgb(11, 35, 57);
     color: #FD6187;
 }
 
 .toastify-custom.toast-warning {
-    background-color: rgba(255, 255, 255, 0.04);;
+    background-color: rgb(11, 35, 57);
     color: #FD6187;
 }
 
 .toastify-custom.toast-info {
-    background-color: rgba(255, 255, 255, 0.04);;
+    background-color: rgb(11, 35, 57);
     color: #FD6187;
 }
 
 .toastify-custom .Toastify__progress-bar {
     background-color: #FD6187;
+}
+
+.toastify-custom .Toastify__close-button {
+    color: #e8e8e8;
 }

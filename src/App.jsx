@@ -24,7 +24,7 @@ function App() {
                 closeOnClick
                 rtl={false}
             />
-            <div className={'flex flex-col gap-10 p-6 xs:p-8 xs:gap-14 s:p-14 s:gap-20'}>
+            <div className={'mt-4 flex flex-col gap-10 p-6 xs:p-8 xs:gap-14 s:p-14 s:gap-20'}>
                 <div className={'w-full flex flex-col items-center justify-center'}>
                     <TimerForm onSubmit={handleSubmit} />
                 </div>
