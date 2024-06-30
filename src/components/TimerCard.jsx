@@ -74,6 +74,28 @@ const TimerCard = ({ id }) => {
         color = 'red';
     }
 
+    const handleToggleTimer = () => {
+        if (isRunning) {
+            stopTimer(id);
+        } else {
+            startTimer(id);
+        }
+    };
+
+    const handleStartSound = () => {
+        const audio = new Audio(alertSound);
+        audio.play().then(() => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+    };
+
+    useEffect(() => {
+        if (isRunning) {
+            handleStartSound();
+        }
+    }, [isRunning]);
+
     return (
         <div className={`${percentage <= 25 && percentage > 0 ? 'anim' : ''} min-w-[235px] card-timer rounded-xl flex flex-col justify-center items-center gap-6 py-4 px-8 max-w-[200px] xs:max-w-[400px]`}>
             <div className={'w-full h-full text-center'}>
@@ -98,7 +120,7 @@ const TimerCard = ({ id }) => {
                 <CircularProgress style={{width: '120px', height: '120px', color: color}} variant="determinate" value={percentage} />
             </div>
             <div className={'w-full flex justify-between items-center gap-6'}>
-                <div className={'hover:cursor-pointer hover:text-white'} onClick={isRunning ? () => stopTimer(id) : () => startTimer(id)}>
+                <div className={'hover:cursor-pointer hover:text-white'} onClick={handleToggleTimer}>
                     {isRunning ?
                         <i className={'icon icon-pause text-orange'}></i>
                         :
