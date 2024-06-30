@@ -1,7 +1,7 @@
 import CircularProgress from "@mui/material/CircularProgress";
-import {useTimersStore} from "../stores/store.js";
+import { useTimersStore } from "../stores/store.js";
 import ReactHowler from 'react-howler';
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import alertSound from '/src/alert.mp3';
 
 const TimerCard = ({ id }) => {
