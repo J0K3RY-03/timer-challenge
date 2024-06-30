@@ -1,48 +1,37 @@
-import InputTimer from './components/InputTimer.jsx'
-import Stack from '@mui/material/Stack';
-import CircularProgress from '@mui/material/CircularProgress';
-import CardTimer from "./components/CardTimer.jsx";
+import TimerForm from './components/TimerForm.jsx';
+import TimerList from './components/TimerList.jsx';
+import { useTimersStore } from "./stores/store.js";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+    const { addTimer } = useTimersStore(state => ({
+        addTimer: state.addTimer,
+    }));
 
-  return (
-    <>
-      <div className={'w-full p-6 flex flex-col items-center justify-center'}>
-          <form className={'text-red font-bold flex justify-center items-center gap-1'} action="">
-              <div className={'flex flex-col items-center justify-center'}>
-                  <label htmlFor="hour">H</label>
-                  <div className={'flex items-center justify-center'}>
-                      <InputTimer time={'00'}/>
-                      <span className={'text-3xl text-red'}>:</span>
-                  </div>
-              </div>
-              <div className={'flex flex-col items-center justify-center'}>
-                  <label htmlFor="hour">M</label>
-                  <div className={'flex items-center justify-center'}>
-                      <InputTimer time={'00'}/>
-                      <span className={'text-3xl text-red'}>:</span>
-                  </div>
-              </div>
-              <div className={'flex flex-col items-center justify-center'}>
-                  <label htmlFor="hour">S</label>
-                  <div>
-                      <InputTimer time={'00'}/>
-                  </div>
-              </div>
-          </form>
-      </div>
-        <div className={'flex items-center justify-center'}>
-            <div className={'p-6 inline-grid grid-cols-2 text-red gap-2 xs:grid-cols-3 xs:gap-4 s:grid-cols-4 s:gap-6` l:grid-cols-5 l:gap-8'}>
-                <CardTimer/>
-                <CardTimer/>
-                <CardTimer/>
-                <CardTimer/>
-                <CardTimer/>
-                <CardTimer/>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addTimer();
+    }
+
+    return (
+        <div>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+            />
+            <div className={'flex flex-col gap-10 p-6 xs:p-8 xs:gap-14 s:p-14 s:gap-20'}>
+                <div className={'w-full flex flex-col items-center justify-center'}>
+                    <TimerForm onSubmit={handleSubmit} />
+                </div>
+                <TimerList />
             </div>
         </div>
-    </>
-  )
+    )
 }
 
-export default App
+export default App;
