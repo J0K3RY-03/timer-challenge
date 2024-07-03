@@ -1,5 +1,5 @@
 const InputTimer = ({name, onChange, value}) => {
-    console.log(value);
+
     return (
         <div className={'flex flex-col justify-center items-center'}>
             <input
